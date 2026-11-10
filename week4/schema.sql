@@ -84,3 +84,13 @@ DESCRIBE pet;
 DESCRIBE veterinarian;
 DESCRIBE appointment;
 DESCRIBE vaccination_record;
+
+-- -----------------------------------------------------------------------------
+-- TASK 5: Fix Deliberate Mistake (phone_number INT -> VARCHAR(20))
+-- -----------------------------------------------------------------------------
+-- Inappropriate INT cannot preserve leading zeros (e.g. 0917...) or symbols (+63).
+-- Correcting definition to VARCHAR(20) NOT NULL:
+ALTER TABLE owner MODIFY COLUMN phone_number VARCHAR(20) NOT NULL;
+
+-- Verify the corrected definition
+DESCRIBE owner;
