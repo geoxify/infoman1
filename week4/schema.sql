@@ -47,4 +47,32 @@ CREATE TABLE veterinarian (
     PRIMARY KEY (vet_id)
 );
 
+-- -----------------------------------------------------------------------------
+-- TASK 3: Create Relationship Tables (appointment, vaccination_record)
+-- -----------------------------------------------------------------------------
+
+-- appointment resolves the M:N relationship between Pet and Veterinarian
+CREATE TABLE appointment (
+    appointment_id INT AUTO_INCREMENT,
+    appointment_date DATETIME NOT NULL,
+    reason_for_visit VARCHAR(255) NOT NULL,
+    pet_id INT NOT NULL,
+    vet_id INT NOT NULL,
+    PRIMARY KEY (appointment_id),
+    CONSTRAINT fk_appointment_pet FOREIGN KEY (pet_id) REFERENCES pet(pet_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT,
+    CONSTRAINT fk_appointment_vet FOREIGN KEY (vet_id) REFERENCES veterinarian(vet_id)
+        ON UPDATE CASCADE ON DELETE RESTRICT
+);
+
+-- vaccination_record resolves the weak entity identifying with Pet
+CREATE TABLE vaccination_record (
+    pet_id INT NOT NULL,
+    vaccine_name VARCHAR(100) NOT NULL,
+    vaccination_date DATE NOT NULL,
+    PRIMARY KEY (pet_id, vaccine_name, vaccination_date),
+    CONSTRAINT fk_vaccination_pet FOREIGN KEY (pet_id) REFERENCES pet(pet_id)
+        ON UPDATE CASCADE ON DELETE CASCADE
+);
+
 SHOW TABLES;
