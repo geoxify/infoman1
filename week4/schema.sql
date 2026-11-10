@@ -75,4 +75,12 @@ CREATE TABLE vaccination_record (
         ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+-- -----------------------------------------------------------------------------
+-- TASK 4: Verification Queries
+-- -----------------------------------------------------------------------------
 SHOW TABLES;
+DESCRIBE owner;
+DESCRIBE pet;
+DESCRIBE veterinarian;
+DESCRIBE appointment;
+DESCRIBE vaccination_record;
