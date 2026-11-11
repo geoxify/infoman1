@@ -509,7 +509,7 @@ Both borrowing events for Maria Santos are retrieved accurately (one returned, o
 ## Task 6: Video Walkthrough & Presentation Script
 
 ### 6.1 Walkthrough Video Information
-- **Video Link:** `[INSERT_UNLISTED_YOUTUBE_LINK_HERE]`
+- **Video Link:** https://youtu.be/kcoeqD5_DNg
 - **Target Duration:** ~8 to 12 minutes (under 15-minute exam threshold)
 - **Presenter:** Geoff Benedict P. Cariño
 
